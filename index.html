@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Travel Companion | Your AI-Powered Journey</title>
+    <meta name="description" content="The ultimate AI-powered travel platform for planning, booking, and exploring the world.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- GSAP Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Leaflet Maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/features.css">
+</head>
+<body class="dark-theme">
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <i data-lucide="compass" class="logo-icon"></i>
+                <span>TREK<span>AI</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#hero" class="active">Home</a>
+                <a href="#features">Features</a>
+                <a href="#map">Map</a>
+                <a href="#stories">Stories</a>
+            </div>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="icon-btn">
+                    <i data-lucide="moon"></i>
+                </button>
+                <button class="primary-btn">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="animated-bg"></div>
+            <div class="container hero-content">
+                <h1 class="hero-title">Your Smart Travel <br><span class="gradient-text">Companion</span></h1>
+                <p class="hero-subtitle">Plan, book, and explore the world with next-generation AI intelligence. Every step of your journey, optimized and personalized.</p>
+                <div class="hero-btns">
+                    <button class="primary-btn lg" onclick="scrollToSection('features')">Plan Your Trip</button>
+                    <button class="secondary-btn lg">Explore Destinations</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-num">50k+</span>
+                        <span class="stat-label">Destinations</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">AI</span>
+                        <span class="stat-label">Planner</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">24/7</span>
+                        <span class="stat-label">SOS Support</span>
+                    </div>
+                </div>
+            </div>
+            <div class="floating-elements">
+                <i data-lucide="plane" class="float-icon p1"></i>
+                <i data-lucide="map-pin" class="float-icon p2"></i>
+                <i data-lucide="hotel" class="float-icon p3"></i>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section id="features" class="container section">
+            <h2 class="section-title">All-in-One <span class="gradient-text">Adventure Hub</span></h2>
+            <div class="features-grid" id="features-grid">
+                <!-- Cards will be injected by JS or hardcoded for SEO -->
+            </div>
+        </section>
+
+        <!-- Interactive Map Wrapper -->
+        <section id="map" class="section map-section">
+            <div class="container">
+                <h2 class="section-title">Interactive <span class="gradient-text">World Explorer</span></h2>
+                <div id="main-map" class="glass-map"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <i data-lucide="compass" class="logo-icon"></i>
+                        <span>TREK<span>AI</span></span>
+                    </div>
+                    <p>Revolutionizing the way you travel. Smart calculations, real-time data, and unforgettable memories.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Privacy</a>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <i data-lucide="instagram"></i>
+                        <i data-lucide="twitter"></i>
+                        <i data-lucide="github"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 TREKAI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals Container -->
+    <div id="modal-container" class="modal-overlay hidden">
+        <div class="glass-modal">
+            <button class="close-modal"><i data-lucide="x"></i></button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

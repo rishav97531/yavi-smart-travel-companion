@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --color-yavi-blue: #3b82f6;
+  --color-yavi-purple: #8b5cf6;
+  --color-yavi-teal: #14b8a6;
+  --color-glass: rgba(255, 255, 255, 0.1);
+  --color-glass-dark: rgba(255, 255, 255, 0.05);
+  
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-heading: "Outfit", sans-serif;
+  
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+}
+
+@layer base {
+  body {
+    @apply bg-[#050505] text-white font-sans antialiased selection:bg-yavi-purple/30;
+    overflow-x: hidden;
+  }
+}
+
+/* Premium Animated Background */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #050505;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+  filter: blur(80px);
+  animation: move 20s infinite alternate;
+}
+
+.blob-2 {
+  background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%);
+  animation-delay: -5s;
+  animation-duration: 25s;
+}
+
+.blob-3 {
+  background: radial-gradient(circle, rgba(20,184,166,0.1) 0%, transparent 70%);
+  animation-delay: -10s;
+  animation-duration: 30s;
+}
+
+@keyframes move {
+  from { transform: translate(-10%, -10%) scale(1); }
+  to { transform: translate(100%, 100%) scale(1.2); }
+}
+
+@utility glass {
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+}
+
+@utility glass-card {
+  @apply glass rounded-2xl p-6 transition-all duration-300 hover:border-white/20 hover:shadow-2xl hover:bg-white/15 hover:-translate-y-1;
+}
+
+@utility gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-yavi-blue via-yavi-purple to-yavi-teal;
+}
+
+@utility gradient-border {
+  position: relative;
+  border-radius: inherit;
+}
+  
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6, #14b8a6);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Page Transitions */
+.page-enter { opacity: 0; transform: translateY(10px); }
+.page-enter-active { opacity: 1; transform: translateY(0); transition: all 0.5s ease-out; }
+.page-exit { opacity: 1; transform: translateY(0); }
+.page-exit-active { opacity: 0; transform: translateY(-10px); transition: all 0.5s ease-in; }
