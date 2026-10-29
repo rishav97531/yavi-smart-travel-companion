@@ -6,7 +6,7 @@ Yavi is a smart travel companion designed to make trip planning easier by bringi
 
 ## 🌐 Project Links
 
-- **Live Website:** `Add your deployed website URL here`
+- **Live Website:** `https://vercel.com/mrrishavraj97531-8161s-projects/yavi-smart-travel-companion`
 - **GitHub Repository:** https://github.com/rishav97531/yavi-smart-travel-companion
 
 ## 📌 About the Project
